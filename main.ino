@@ -107,7 +107,7 @@ ThingSpeak.begin(client);
 xTaskCreate(
  Thingspeak
  , "Thingspeak" // A name just for humans
- , 4096 // This stack size EE-423: Embedded System Design Page 11
+ , 4096 // This stack size 
  , NULL //Parameters for the task
  , 1 // Priority
  , NULL ); //Task Handle
@@ -115,7 +115,7 @@ xTaskCreate(
 xTaskCreate(
  TempReadandDisplay
  , "TempRead" // A name just for humans
- , 1000 // This stack size EE-423: Embedded System Design Page 11
+ , 1000 // This stack size 
  , NULL //Parameters for the task
  , 0 // Priority
  , NULL ); //Task Handle
@@ -124,7 +124,7 @@ xTaskCreate(
 xTaskCreate(
  MoistureReadandDisplay1
  , "MoistureRead1" // A name just for humans
- , 1000 // This stack size EE-423: Embedded System Design Page 11
+ , 1000 // This stack size 
  , NULL //Parameters for the task
  , 1 // Priority
  , NULL ); //Task Handle
@@ -160,7 +160,7 @@ for(;;){
   ThingSpeak.setField(4, moist_disp2); //2
   ThingSpeak.setField(5, moist_disp3); //3
   ThingSpeak.setField(6, pumpstate); //pump status
-  ThingSpeak.setField(7, motorposition); //online(always 1)
+  ThingSpeak.setField(7, motorposition); //motor position
   
   ThingSpeak.writeFields(CHANNEL_ID, CHANNEL_API_KEY);
   vTaskDelay(pdMS_TO_TICKS(15000));
